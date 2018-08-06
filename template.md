@@ -3,12 +3,11 @@ layout: post
 title:  "Title: Description"
 date:   2018-06-30 01:50:46 -0700
 categories:  
+image:
+projecturl:
 ---
-url
+(Project Summary)
 
-[![lead image](/images/.png)](url)
-
-## Project Summary
 ## Token metrics
 ## Market opportunity/Competitive analysis
 ## Team/Advisors/Partnerships
