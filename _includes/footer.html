@@ -1,0 +1,14 @@
+<footer class="c-page__footer">
+  <p>&copy; {{ site.author }} {{ 'now' | date: '%Y' }}</p>
+  <p style="font-size: 3rem;">
+    {% if site.twitter_username %}
+      <a href="https://twitter.com/{{ site.twitter_username }}"><i class="fab fa-twitter"></i></a>
+    {% endif %}
+    {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}"><i class="fab fa-github-alt"></i></a>
+    {% endif %}
+    {% if site.telegram_username %}
+      <a href="https://t.me/{{ site.telegram_username }}"><i class="fab fa-telegram-plane"></i></a>
+    {% endif %}
+  </p>
+</footer>
