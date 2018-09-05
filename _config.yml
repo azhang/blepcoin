@@ -26,7 +26,7 @@ telegram_username: blepcoin_announcements
 baseurl: "/"
 url: "https://www.blepcoin.com" # the base hostname & protocol for your site, e.g. http://example.com
 
-google_analytics_id: UA-1111111111-1
+google_analytics_id: UA-125317868-1
 disqus_id:
 
 # Build settings
