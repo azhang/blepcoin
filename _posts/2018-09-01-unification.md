@@ -16,7 +16,20 @@ There are 3 types of users: **Data Providers** (apps/enterprise), **End Users** 
 
 ## Token metrics
 
-tbd
+**Hard Cap**: 18,000,000 USD
+**Token supply sold**: 25%
+**Go-to-market and liquidity**: 10%
+**Founding Team**: 12%
+**Future Team**: 8%
+**Advisory**: 5%
+**Community Distribution**: 5%
+**Ecosystem Development**: 35%
+
+A **total** of **1,000,000,000** tokens are generated and **250,000,000** are **sold** during the event. The pricing of the tokens is **$0.075 per UND**.
+
+**Team Lockup** is **3 years** vested quarterly. **Advisor lockup** is **1 or 2 years** vested quarterly.
+
+**Current Private Round**: Private - 35,000 ETH - No Bonus - 50% released at TGE, 25% 3m, 25% 6m
 
 ## Market opportunity/Competitive analysis
 
@@ -32,31 +45,36 @@ Ocean Protocol plays the following roles: Source, Ingestion, Processing, Persist
 
 ## Team/Advisors/Partnerships
 - **[Neyma Jahan](https://www.linkedin.com/in/neyma/)**, (Founder)
+
+   - Founder/board member of SmartMat, CEO of WMaker Labs.
+
    - Bachelor's for Business/Managerial Economics UCDavis '98
 
      
 
 - **[Paul Hodgson](https://www.linkedin.com/in/codegnosis/)**, (CTO and senior developer/architect) [GitHub](https://github.com/Codegnosis)
 
-    - Founder and Senior developer for Codegnosis
-    - Codegnosis: Data Warehouse/BI Consultant, Web and Mobile Application Developer, Neural Network developer
-    - BSc Software Eng. Sheffield Hallam Univ. '00
+    - CTO SmartMat
+    - Founder and Senior developer for Codegnosis — Data Warehouse/BI Consultant, Web and Mobile Application Developer, Neural Network developer
+    - CTO @ youbundle, senior dev @ Blue Lotus, consultant at LexisNexis
         
 
 - **[Maziar Sadri](https://www.linkedin.com/in/mazisadri/)**, (Products & Co founder)
+
+    - Cofounder/software architect SmartMat
     - Managing Partner at Summit Consulting
-    - Product & Marketing Team Lead @ Yahoo!
+    - Marketing Team Lead @ Yahoo
     - MBA Georgetown University '05
 
 
 
-Neyma, Paul, and Maziar worked together on SmartMat, working on integrating Machine Learning and large scale data analysis
+Neyma, Paul, and Maziar worked together on SmartMat, working on integrating Machine Learning and large scale data analysis.
 
 
 
 - **[Larry Gandt](https://www.linkedin.com/in/larrygandt/)**, (Enterprise Sales & Business Development)
-  - Director Sales at Ripple
-  - https://unification.com/foundation/ethos/#larrygandt
+  - Director Sales at Ripple — responsible for aquisition of many high profile partnerships
+  - Ripple Labs, Accuity, Thomson FInancial
 
 
 
@@ -94,8 +112,6 @@ Neyma, Paul, and Maziar worked together on SmartMat, working on integrating Mach
 
 - **[John Justus](https://www.linkedin.com/in/john-justus-73aaa515b/)**, (Research)
   - works on user acquisition and adaption of the Unification platform by the mass market
-  - finds the appropriate partners to onboard to add value to users so they can to profit from their data 
-  - BSc Computer Networks for Business,  Computer Systems Networking and Telecommunications, Digital Marketing at Birmingham City Univ. '03
 
 
 
@@ -119,7 +135,7 @@ Ocean Protocol seems like the closest competitor in terms of features. Ocean has
 
 There are 4 major pieces to the project:
 
-1. **Blockchain**: The blockchain is a store of metadata, including user permissions, data schemas, Data Provider prices, UApp validity (in the "Mother" smart contract), and data provider connection data. Unification is not building a new blockchain — it's a blockchain agnostic protocol so as long as the smart contracts can be ported, it should work.
+1. **Blockchain**: The blockchain is a store of metadata, including user permissions, data schemas, Data Provider prices, UApp validity (in the "Mother" smart contract), and data provider connection data. Unification is not building a new blockchain — it's a **blockchain agnostic** protocol so as long as the smart contracts can be ported, it should work. 
 2. **[Haiku](https://github.com/unification-com/haiku) Server Node Software**: Data Providers need to install this and deploy corresponding smart contracts to provide the connection between existing databases and the Unification network.
 3. **[Haiku](https://github.com/unification-com/haiku) Client Software**: Data Consumers need to install this and deploy corresponding smart contracts to provide the connection between scripts and the Unification network.
 4. **[Babel App](https://github.com/unification-com/babel)**: End Users and Data Consumers use this app as a wallet, keystore, and frontend for the UApp store. It can also be used by Data Consumers to initiate data transfers, and End Users to modify permissions.
@@ -164,7 +180,7 @@ The code in `/Docker` and `/bin` show that the bulk of the business logic is in 
 
 [rpc.py](https://github.com/unification-com/haiku-node-prototype/blob/786702197ad2f287c437959b46e31da5c159117f/haiku_node/rpc.py): This file works between the `haiku` executable and the Data Provider's data. For the proof of concept, [UnificationDataFactory](https://github.com/unification-com/haiku-node-prototype/blob/786702197ad2f287c437959b46e31da5c159117f/haiku_node/data/factory.py) looks like it only reads from a sqlite3 database.
 
-There are several other helper files in the repo, including those for interacting with the EOS blockchain, encryption, and checking whether a UApp is valid.
+There are several other helper files in the repo, including those for interacting with the blockchain, encryption, and checking whether a UApp is valid.
 
 ----
 
@@ -172,7 +188,7 @@ There are several other helper files in the repo, including those for interactin
 
 ![image-20180907030236898]({{site.baseurl}}/images/unification3.png)
 
-[eosio.token/eosio.token.cpp](https://github.com/unification-com/smart-contracts/blob/master/eosio.token/eosio.token.cpp): EOS token for UND. Pretty self explanatory.
+[eosio.token/eosio.token.cpp](https://github.com/unification-com/smart-contracts/blob/master/eosio.token/eosio.token.cpp): UND token for the EOS version on the protocol. Pretty self explanatory.
 
 [unification_acl/unification_acl.cpp](https://github.com/unification-com/smart-contracts/blob/master/unification_acl/unification_acl.cpp): Smart contract that defines user controlled access to data. The functions in this smart contract are pretty self explanatory from their names — `grant`, `revoke`, `check`, `set_permission`, `setschema`, `setsource` (database, file, or other contract), `setexternal` (external requesting app), `addhash`, and `setrewards`.
 
@@ -200,7 +216,11 @@ Unification is currently in the stage of fleshing out their testnet, and just st
 
 There doesn't seem to be any competitors with the same amount of depth in building and testing the entire system (including onboarding tools). As an advisor, I also get to see the team's technical conversations every day in Slack — it goes much much deeper than the whitepaper. I'm comfortable with the tech.
 
-What I'm waiting for currently is actually on the business side. It would be great to see some pilot programs and/or MOUs with more known companies that can play the roles of Data Provider and Data User. Not only would this be great to show traction, but it'd also help the team smooth out the onboarding process as well as test with real data and demand.
+What I'm waiting for currently is actually on the business side. It would be great to see some pilot programs and/or MOUs with more known companies that can play the roles of Data Provider and Data User. Not only would this be great to show traction, but it'd also help the team smooth out the onboarding process as well as test with real data and demand. 
+
+Regarding this last point, Unification recently added Larry Gandt from Ripple to lead business development. Regardless of my opinions about Ripple, there's no denying the quality of their enterprise partnerships. Looking forward to seeing similar level partnerships soon.
+
+
 
 ## Other Info
 
