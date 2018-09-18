@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Unification: Data liquidity protocol"
-date:   2018-09-01
+date:   2018-09-17
 categories:  
 image: /images/unification0.png
 projecturl: https://unification.com/
@@ -35,9 +35,9 @@ A **total** of **1,000,000,000** tokens are generated and **250,000,000** are **
 
 To me, Unification to data is what 0x is to tokens. While 0x provides a protocol for sharing liquidity between many off-chain order books, Unification provides a protocol for sharing standardized data between many off-chain databases (eg. heartrate data can come from multiple sources). 
 
-[Ocean Protocol](https://oceanprotocol.com/) ("A decentralized data exchange protocol to unlock data for AI"): Very similar feature set, but Ocean has its own blockchain. Ocean also allows data consumers to bring AI models to the data to generate the results without needing to see the data. However, Ocean does not offer semi-automated data standardization, or efficient onboarding for enterprise, and does not give End Users control over their data. There is no framework for permissions and consent. Ocean has a partnership with the Singapore government, but no working product yet. Ocean tokenomics is based on a staked curation market ranked by availability and usage.
+[Ocean Protocol](https://oceanprotocol.com/) ("A decentralized data exchange protocol to unlock data for AI"): Very similar feature set, but Ocean has its own blockchain. Ocean also allows data consumers to bring AI models to the data to generate the results without needing to see the data. However, Ocean does not offer semi-automated data standardization, or efficient onboarding for enterprise, and does not give End Users control over their data. There is no framework for permissions and consent. Ocean has a partnership with the Singapore government, but no working product yet. Ocean tokenomics is based on a staked curation market ranked by availability and usage. From my understanding, Ocean Protocol's AI backend is actually SingularityNET.
 
-Ocean Protocol plays the following roles: Source, Ingestion, Processing, Persistence, Consumption, Discovery, and Governance. Unification plays the same roles, except Processing and Persistence. Unification does not transform, normalize, and consolidate assets - it just creates mappings which also removes the need to persist the processed data.
+The staking model of data in Ocean is not only for availability/transfer but also for the ranking/popularity of the datasets. Unification does not incentivize staking for ranking datasets, which aligns Data Producer and Data Consumer interests.
 
 [Datum]( https://datum.org/): Data is stored on chain.
 
@@ -121,7 +121,7 @@ Neyma, Paul, and Maziar worked together on SmartMat, working on integrating Mach
 
 ## Competitive Advantage
 
-Ocean Protocol seems like the closest competitor in terms of features. Ocean has the advantage of supporting private data processing. Unification has the advantage of go-to-market speed due to being a protocol, not a blockchain. Unification also provides an SDK with extensive documentation to make onboarding much simpler and more feasible, and the advantage of giving End Users the control of where their data can go. Ocean Protocol's beta is planned to be released Q4 2018.
+Ocean Protocol seems like the closest competitor in terms of features. Unification has the advantage of go-to-market speed due to being a protocol, not a blockchain. Unification also provides an SDK with extensive documentation to make onboarding much simpler and more feasible, and the advantage of giving End Users the control of where their data can go. Ocean Protocol's beta is planned to be released Q4 2018.
 
 ## Tokenomics and Token Utility
 
@@ -148,7 +148,13 @@ There are 5 repos, some public some private.
 
 ----
 
+**[haiku-core](https://github.com/unification-com/haiku-core)**: Private repo where most of the current active development is occuring. 
+
+Contains the Haiku prototype code, smart contracts, as well as the ML algorithms research/development. This repo contains the daily commits, with stable PRs/Merges being pushed to following repos.
+
 **[haiku-node-prototype](https://github.com/unification-com/haiku-node-prototype)** (Python, 593 commits, started Feb 25, 2018): This is the proof of concept.
+
+---
 
 There is a note stating the following:
 
@@ -174,11 +180,11 @@ The code in `/Docker` and `/bin` show that the bulk of the business logic is in 
 
 **[mother](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/mother/cli.py)**: functions to [validate](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/mother/cli.py#L73-L95), [invalidate](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/mother/cli.py#L98-L120), and [list UApps based on validity](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/mother/cli.py#L98-L120). 
 
-**[haiku](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/main.py)**: [starts and serves an RPC server](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/lookup/eos_lookup.py), and implements functions to [fetch encrypted data from a data provider](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/main.py#L76-L139) and [decrypt it](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/main.py#L110-L139). This contains both Haiku Server and Haiku Client (client.py contains more client implementation).
+**[haiku](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/main.py)**: [starts and serves an RPC server](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/main.py#L26-L32), and implements functions to [fetch encrypted data from a data provider](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/main.py#L76-L139) and [decrypt it](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/main.py#L110-L139). This contains both Haiku Server and Haiku Client (client.py contains more client implementation). There is also [a basic UApp Store implementation](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/main.py#L164), which is an additional method (in addition to "Fetch") to initiating a data exchange.
 
 #### Other interesting files and notes
 
-[rpc.py](https://github.com/unification-com/haiku-node-prototype/blob/786702197ad2f287c437959b46e31da5c159117f/haiku_node/rpc.py): This file works between the `haiku` executable and the Data Provider's data. For the proof of concept, [UnificationDataFactory](https://github.com/unification-com/haiku-node-prototype/blob/786702197ad2f287c437959b46e31da5c159117f/haiku_node/data/factory.py) looks like it only reads from a sqlite3 database.
+[rpc.py](https://github.com/unification-com/haiku-node-prototype/blob/786702197ad2f287c437959b46e31da5c159117f/haiku_node/rpc.py): This file works between the `haiku` executable and the Data Provider's data. For the proof of concept, [UnificationDataFactory](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/data/factory.py) looks like it only reads from a sqlite3 database. The team tells me this previously supported ODBC but was was migrated to sqlite3 for unit testing purposes, and will eventually support any ODBC connection in the future.
 
 There are several other helper files in the repo, including those for interacting with the blockchain, encryption, and checking whether a UApp is valid.
 
@@ -190,9 +196,7 @@ There are several other helper files in the repo, including those for interactin
 
 [eosio.token/eosio.token.cpp](https://github.com/unification-com/smart-contracts/blob/master/eosio.token/eosio.token.cpp): UND token for the EOS version on the protocol. Pretty self explanatory.
 
-[unification_acl/unification_acl.cpp](https://github.com/unification-com/smart-contracts/blob/master/unification_acl/unification_acl.cpp): Smart contract that defines user controlled access to data. The functions in this smart contract are pretty self explanatory from their names — `grant`, `revoke`, `check`, `set_permission`, `setschema`, `setsource` (database, file, or other contract), `setexternal` (external requesting app), `addhash`, and `setrewards`.
-
-[unification_uapp/unification_uapp.cpp](https://github.com/unification-com/smart-contracts/blob/master/unification_uapp/unification_uapp.cpp): Newer version of the above `unification_acl` contract, with more granular permissions control. Adds functionality for a price schedule, versioning, data requests, and setting encryption key.
+[unification_uapp/unification_uapp.cpp](https://github.com/unification-com/smart-contracts/blob/master/unification_uapp/unification_uapp.cpp): Smart contract that defines user controlled access to data. The functions in this smart contract are pretty self explanatory from their names — `modifyperm`(modify permissions), `modifypermsg`, `addschema` (add data schema), `editschema`, `setvers` (set version), `setschedule` (set daily, weekly, or monthly schedule), `setpricesch`, `setpriceadh` (set adhoc price), `setschema`, `initreq` (initialize request), `updatereq`, and `setrsakey` (set RSA encryption key for the data).
 
 [unification_mother/unification_mother.cpp](https://github.com/unification-com/smart-contracts/tree/master/unification_mother/unification_mother.cpp): Unification Mother contract. Has functions to register, validate, and invalidate UApps to the registry, as well as checking for UApp validity and reading the UApp registry data.
 
@@ -208,7 +212,11 @@ This is a pretty standard Angular web app. It starts at [`public/scripts/app.js`
 
 **[haiku](https://github.com/unification-com/haiku)** (C++, 8 commits, started June 17, 2018): C++ version of functionality in the [haiku-node-prototype](https://github.com/unification-com/haiku-node-prototype) repo.
 
-As you can see from the number and date range of commits, this repo is still very bare and only contains a barebones http server (eventually to become a haiku node RPC server). The Python based prototype is still in very active development, so it's reasonable to not dedicate time to building the C++ version until later (since Python is much quicker/easier to prototype with).
+This repo is where the C++ production version will live. While the Python-based prototype is in very active development, the C++ version is still reasonably early since Python is much quicker and easier to prototype with.
+
+---
+
+**[whitepaper](https://github.com/unification-com/whitepaper)**: Public repo which contains the latest published PDF of the tech whitepaper
 
 ## Conclusion
 
@@ -216,17 +224,17 @@ Unification is currently in the stage of fleshing out their testnet, and just st
 
 There doesn't seem to be any competitors with the same amount of depth in building and testing the entire system (including onboarding tools). As an advisor, I also get to see the team's technical conversations every day in Slack — it goes much much deeper than the whitepaper. I'm comfortable with the tech.
 
-What I'm waiting for currently is actually on the business side. It would be great to see some pilot programs and/or MOUs with more known companies that can play the roles of Data Provider and Data User. Not only would this be great to show traction, but it'd also help the team smooth out the onboarding process as well as test with real data and demand. 
+~~What I'm waiting for currently is actually on the business side. It would be great to see some pilot programs and/or MOUs with more known companies that can play the roles of Data Provider and Data User. Not only would this be great to show traction, but it'd also help the team smooth out the onboarding process as well as test with real data and demand.~~ (updates below)
 
 Regarding this last point, Unification recently added Larry Gandt from Ripple to lead business development. Regardless of my opinions about Ripple, there's no denying the quality of their enterprise partnerships. Looking forward to seeing similar level partnerships soon.
 
-
+_Update Sept 18: Unification has signed up partners in various industries including HintChain with 8.5M users and a few other companies. Additionally, there are some in the public sector which I'm really excited about but can not yet disclose._
 
 ## Other Info
 
 Here are some interesting things that I've seen the team research:
 
-- Raw data is typically not super useful — data needs to be preprocessed. Machine Learning can be utilized for Ingestion.
+- Raw data is typically not super useful — data needs to be preprocessed. Machine Learning can be utilized for Ingestion and Processing, on which the team is publishing a series of articles: [https://medium.com/unificationfoundation/how-unification-standardizes-data-with-artificial-intelligence-machine-learning-b13b6c04bb76](https://medium.com/unificationfoundation/how-unification-standardizes-data-with-artificial-intelligence-machine-learning-b13b6c04bb76)
 - Mappings between datasets and consumer needs vary widely. Therefore, it is not possible for reputation staking and rewards/punishment system to optimize to a single mapping. Unification is researching ML to optimize mappings instead of using ineffective tokenomics, and building a predictive model on which dataset fits best based on consumer needs.
 - Popularity of a data source is not a reliable performance measure.
 
