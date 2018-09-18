@@ -6,13 +6,13 @@ categories:
 image: /images/unification0.png
 projecturl: https://unification.com/
 ---
-***Note: I am an advisor for Unification.***
-
 > Unification is a decoupled architectural framework that provides generalized state channels for data standardization and interoperability across enterprise tech stacks.
 
 In other words, Unification is a framework that companies can use to quickly standardize and commercialize their existing databases. It uses blockchain only for settlement and metadata, while data transfers are done off-chain.
 
 There are 3 types of users: **Data Providers** (apps/enterprise), **End Users** (you and me), and **Data Consumers** (researchers/advertisers/enterprise).
+
+***Note: I am an advisor for Unification.***
 
 ## Token metrics
 
