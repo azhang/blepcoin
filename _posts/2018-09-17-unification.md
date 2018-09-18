@@ -16,13 +16,13 @@ There are 3 types of users: **Data Providers** (apps/enterprise), **End Users** 
 
 ## Token metrics
 
-**Hard Cap**: 18,000,000 USD
-**Token supply sold**: 25%
-**Go-to-market and liquidity**: 10%
-**Founding Team**: 12%
-**Future Team**: 8%
-**Advisory**: 5%
-**Community Distribution**: 5%
+**Hard Cap**: 18,000,000 USD  
+**Token supply sold**: 25%  
+**Go-to-market and liquidity**: 10%  
+**Founding Team**: 12%  
+**Future Team**: 8%  
+**Advisory**: 5%  
+**Community Distribution**: 5%  
 **Ecosystem Development**: 35%
 
 A **total** of **1,000,000,000** tokens are generated and **250,000,000** are **sold** during the event. The pricing of the tokens is **$0.075 per UND**.
@@ -152,9 +152,9 @@ There are 5 repos, some public some private.
 
 Contains the Haiku prototype code, smart contracts, as well as the ML algorithms research/development. This repo contains the daily commits, with stable PRs/Merges being pushed to following repos.
 
-**[haiku-node-prototype](https://github.com/unification-com/haiku-node-prototype)** (Python, 593 commits, started Feb 25, 2018): This is the proof of concept.
-
 ---
+
+**[haiku-node-prototype](https://github.com/unification-com/haiku-node-prototype)** (Python, 593 commits, started Feb 25, 2018): This is the proof of concept.
 
 There is a note stating the following:
 
