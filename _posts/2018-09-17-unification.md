@@ -57,7 +57,7 @@ The staking model of data in Ocean is not only for availability/transfer but als
     - CTO SmartMat
     - Founder and Senior developer for Codegnosis — Data Warehouse/BI Consultant, Web and Mobile Application Developer, Neural Network developer
     - CTO @ youbundle, senior dev @ Blue Lotus, consultant at LexisNexis
-        
+      
 
 - **[Maziar Sadri](https://www.linkedin.com/in/mazisadri/)**, (Products & Co founder)
 
@@ -136,19 +136,21 @@ Ocean Protocol seems like the closest competitor in terms of features. Unificati
 There are 4 major pieces to the project:
 
 1. **Blockchain**: The blockchain is a store of metadata, including user permissions, data schemas, Data Provider prices, UApp validity (in the "Mother" smart contract), and data provider connection data. Unification is not building a new blockchain — it's a **blockchain agnostic** protocol so as long as the smart contracts can be ported, it should work. 
-2. **[Haiku](https://github.com/unification-com/haiku) Server Node Software**: Data Providers need to install this and deploy corresponding smart contracts to provide the connection between existing databases and the Unification network.
-3. **[Haiku](https://github.com/unification-com/haiku) Client Software**: Data Consumers need to install this and deploy corresponding smart contracts to provide the connection between scripts and the Unification network.
-4. **[Babel App](https://github.com/unification-com/babel)**: End Users and Data Consumers use this app as a wallet, keystore, and frontend for the UApp store. It can also be used by Data Consumers to initiate data transfers, and End Users to modify permissions.
+2. **[Haiku Server Node Software](https://github.com/unification-com/haiku-node-prototype/tree/master/haiku_node)**: Data Providers need to install this and deploy corresponding smart contracts to provide the connection between existing databases and the Unification network.
+3. **[Haiku Client Software](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/client.py)**: Data Consumers need to install this and deploy corresponding smart contracts to provide the connection between scripts and the Unification network.
+4. **[Babel App](https://github.com/unification-com/haiku-node-prototype/blob/master/haiku_node/babel/cli.py)**: End Users and Data Consumers use this app as a wallet, keystore, and frontend for the UApp store. It can also be used by Data Consumers to initiate data transfers, and End Users to modify permissions.
 
 ----
 
-There are 5 repos, some public some private.
+There are 7 repos, some public some private.
 
 ![image-20180907012621354]({{site.baseurl}}/images/unification1.png)
 
 ----
 
 **[haiku-core](https://github.com/unification-com/haiku-core)**: Private repo where most of the current active development is occuring. 
+
+![haiku-core image]({{site.baseurl}}/images/unification5.png)
 
 Contains the Haiku prototype code, smart contracts, as well as the ML algorithms research/development. This repo contains the daily commits, with stable PRs/Merges being pushed to following repos.
 
