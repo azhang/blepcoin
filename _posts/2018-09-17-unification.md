@@ -16,20 +16,24 @@ There are 3 types of users: **Data Providers** (apps/enterprise), **End Users** 
 
 ## Token metrics
 
-**Hard Cap**: 18,000,000 USD  
-**Token supply sold**: 25%  
-**Go-to-market and liquidity**: 10%  
+Details: <https://bit.ly/UNDprivateoffer>
+
+**Hard Cap**: 12,000,000 USD  
+**Token supply sold**: 25% (20% private, 5% public)  
+**Ecosystem Development**: 30%  
+**Market Support**: 15%  
 **Founding Team**: 12%  
 **Future Team**: 8%  
 **Advisory**: 5%  
 **Community Distribution**: 5%  
-**Ecosystem Development**: 35%
 
 A **total** of **1,000,000,000** tokens are generated and **250,000,000** are **sold** during the event. The pricing of the tokens is **$0.075 per UND**.
 
-**Team Lockup** is **3 years** vested quarterly. **Advisor lockup** is **1 or 2 years** vested quarterly.
+**Team Lockup** is **3 years** vested quarterly. **Advisor lockup** is **1 - 2 years depending on role** vested quarterly.
 
 **Current Private Round**: Private - 35,000 ETH - No Bonus - 50% released at TGE, 25% 3m, 25% 6m
+
+**Public Sale**: No lockup
 
 ## Market opportunity/Competitive analysis
 
