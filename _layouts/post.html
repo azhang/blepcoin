@@ -3,7 +3,7 @@ layout: page
 ---
 <article class="c-article">
   <header class="c-article__header">
-    <h1 class="c-article__title">{{ page.title }}</h1>
+    <h1 class="c-article__title">{{ page.title }}<br><small>{{ page.description }}</small></h1>
     <p class="c-article__time"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
   </header>
   <!-- Post Tags -->
@@ -22,6 +22,9 @@ layout: page
       <img src={{ site.baseurl }}{{ page.image }} alt="lead image">
     </a>
     {% endif %}
+    <!--<div class="toc-btf">
+      {% include toc.html html=content %}
+    </div>-->
     {{ content }}
   </div>
   <!-- Previous / Next Buttons -->

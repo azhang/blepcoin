@@ -12,9 +12,9 @@ layout: page
     {% endif %}
     <li class="c-archives__item">
       <h3>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
-        <br>
-        <small>{{post.description}}</small>
+        <a href="{{ post.url | prepend: site.baseurl }}"><strong style="">{{post.title}}</strong>&nbsp;<span style="text-transform:lowercase">{{post.description}}</span></a>
+        <!--<br>
+        <small>{{post.description}}</small>-->
       </h3>
       <p>{{ post.date | date: "%b %-d, %Y" }}</p>
     </li>

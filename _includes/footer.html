@@ -10,5 +10,6 @@
     {% if site.telegram_username %}
       <a href="https://t.me/{{ site.telegram_username }}"><i class="fab fa-telegram-plane"></i></a>
     {% endif %}
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fas fa-rss"></i></a>
   </p>
 </footer>

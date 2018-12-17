@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Unification: Data liquidity protocol"
+title:  "Unification"
+description: "Data liquidity protocol"
 date:   2018-09-17
 categories:  
 image: /images/unification0.png
